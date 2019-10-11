@@ -8,19 +8,32 @@ namespace URI_1010_Solution
     {
         static void Main(string[] args)
         {
-            string[] pc1 = Console.ReadLine().Split(' ');
-            int cod1 = int.Parse(pc1[0]);
-            int qtd1 = int.Parse(pc1[1]);
-            double pre1 = double.Parse(pc1[2], CultureInfo.InvariantCulture);
 
-            string[] pc2 = Console.ReadLine().Split(' ');
-            int cod2 = int.Parse(pc2[0]);
-            int qtd2 = int.Parse(pc2[1]);
-            double pre2 = double.Parse(pc2[2], CultureInfo.InvariantCulture);
+            double[,] mat = new double[2, 3];
+            double[] qtds = new double[2];
+            double[] subtotal = new double[2];
 
-            double total = (qtd1 * pre1) + (qtd2 * pre2);
+            for ( int i = 0; i <= 1; i++)
+            {
+                string[] valores = Console.ReadLine().Split(' ');
 
-            Console.WriteLine("VALOR A PAGAR: R$ " + total.ToString("F2",CultureInfo.InvariantCulture));
+                for (int j = 0; j <= 2; j++)
+                {
+                    mat[i, j] = double.Parse(valores[j],CultureInfo.InvariantCulture);
+                    
+                }
+
+                qtds[i] =  mat[i,1];
+                subtotal[i] = mat[i,2];
+                
+            }
+
+            double total = (qtds[0] * subtotal[0]) + (qtds[1] * subtotal[1]);
+
+
+            Console.WriteLine("TOTAL A PAGAR R$ " + total.ToString("F2", CultureInfo.InvariantCulture));
+
+
         }
     }
 }

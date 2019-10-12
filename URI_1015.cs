@@ -21,9 +21,6 @@ namespace URI_1015_Solution
             double distancia = Math.Sqrt((Math.Pow(distancia1,2)) + (Math.Pow(distancia2,2)));
 
             Console.WriteLine(distancia.ToString("F4",CultureInfo.InvariantCulture));
-
-            //Distancia = sqrt((px1 * px1) + (px2 * px2));
-
         }
     }
 }
